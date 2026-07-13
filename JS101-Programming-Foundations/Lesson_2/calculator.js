@@ -2,22 +2,40 @@
 // Ask for the second number.
 // Ask for the operator.
 // Send all three to the 'calc' function.
-  // calc() checks the operator.
+// calc() checks the operator.
   // perform the operation.
   // print the result.
 
 const readline = require("readline-sync");
 
+function prompt(message) {
+  console.log(`=> ${message}`);
+}
+
+function invalidNumber(number) {
+  return number.trimStart() === ''  || Number.isNaN(Number(number));
+}
+
 console.log("Welcome to Calculator!");
 
-console.log("What's the first number?");
+prompt("What's the first number?");
 let number1 = readline.question();
 
+while (invalidNumber(number1)) {
+  prompt("Invalid Number. Please enter a valid number");
+  number1 = readline.question();
+}
 
-console.log("What's the second number?");
+
+prompt("What's the second number?");
 let number2 = readline.question();
 
-console.log(`Pick the operation: \n1) Add \n2) Substract \n3) Multiply \n4) Divide`);
+while (invalidNumber(number2)) {
+  prompt("Invalid Number. Please enter a valid number");
+  number2 = readline.question();
+}
+
+prompt(`Pick the operation: \n1) Add \n2) Substract \n3) Multiply \n4) Divide`);
 let operation = readline.question();
 
 let result = null;
