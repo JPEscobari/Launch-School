@@ -3,8 +3,8 @@
 // Ask for the operator.
 // Send all three to the 'calc' function.
 // calc() checks the operator.
-  // perform the operation.
-  // print the result.
+// perform the operation.
+// print the result.
 
 const readline = require("readline-sync");
 
@@ -37,6 +37,11 @@ while (invalidNumber(number2)) {
 
 prompt(`Pick the operation: \n1) Add \n2) Substract \n3) Multiply \n4) Divide`);
 let operation = readline.question();
+
+while (!['1', '2', '3', '4'].includes(operation)) {
+  prompt("Please choose 1, 2, 3 or 4");
+  operation = readline.question();
+}
 
 let result = null;
 
