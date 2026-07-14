@@ -73,7 +73,7 @@ while (true) {
   main();
   prompt("Continue? [Y/N]: ");
   let option = readline.question();
-  if (option == 'Y') {
+  if (option.toUpperCase() === 'Y') {
     continue;
   } else {
     break;
