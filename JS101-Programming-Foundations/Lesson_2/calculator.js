@@ -68,4 +68,14 @@ function main() {
 };
 
 console.log("Welcome to Calculator!");
-main();
+
+while (true) {
+  main();
+  prompt("Continue? [Y/N]: ");
+  let option = readline.question();
+  if (option == 'Y') {
+    continue;
+  } else {
+    break;
+  }
+}
