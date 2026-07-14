@@ -7,6 +7,7 @@
 // print the result.
 
 const readline = require("readline-sync");
+const message = require('./calculator_messages.json');
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -40,38 +41,38 @@ function operate(operation, number1, number2) {
 };
 
 function main() {
-  prompt("What's the first number?");
+  prompt(message.message_1);
   let number1 = readline.question();
 
   while (invalidNumber(number1)) {
-    prompt("Invalid Number. Please enter a valid number");
+    prompt(message.message_invalid);
     number1 = readline.question();
   }
 
 
-  prompt("What's the second number?");
+  prompt(message.message_2);
   let number2 = readline.question();
 
   while (invalidNumber(number2)) {
-    prompt("Invalid Number. Please enter a valid number");
+    prompt(message.message_invalid);
     number2 = readline.question();
   }
 
-  prompt(`Pick the operation: \n1) Add \n2) Substract \n3) Multiply \n4) Divide`);
+  prompt(message.operation_message);
   let operation = readline.question();
 
   while (!['1', '2', '3', '4'].includes(operation)) {
-    prompt("Please choose 1, 2, 3 or 4");
+    prompt(message.operation_error);
     operation = readline.question();
   }
   operate(operation, number1, number2);
 };
 
-console.log("Welcome to Calculator!");
+console.log(message.welcome);
 
 while (true) {
   main();
-  prompt("Continue? [Y/N]: ");
+  prompt(message.continue);
   let option = readline.question();
   if (option.toUpperCase() === 'Y') {
     continue;

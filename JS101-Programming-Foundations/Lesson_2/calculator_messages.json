@@ -1,0 +1,9 @@
+{
+    "welcome": "Welcome to Calculator!",
+    "message_1": "What is the first number?",
+    "message_2": "What is the second number?",
+    "message_invalid": "Invalid Number. Please try again...",
+    "operation_message": "Pick the operation: \n1) Add \n2) Substract \n3) Multiply \n4) Divide",
+    "operation_error": "Please choose 1, 2, 3 or 4",
+    "continue": "Continue? (Y/N): "
+}
