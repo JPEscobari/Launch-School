@@ -21,7 +21,7 @@ let monthlyInterestRate = 0 // Monthly Interest Rate
 
 console.log("Insert the loan amount:");
 loanAmount = rl.question();
-console.log("Insert the Annual Percentage Rate [APR]:");
+console.log("Insert the Annual Percentage Rate [APR] (10% = 0.10):");
 APR = rl.question();
 monthlyInterestRate = APR / 12;
 console.log("Insert the loan duration in months:");
